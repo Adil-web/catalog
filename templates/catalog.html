@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="{% url "catalog" %}">
+        <input type="text" name="manufacturer" placeholder="производитель">
+        <input type="text" name="model" placeholder="модель">
+        <input type="number" name="year" placeholder="год выпуска">
+        <select name="transmission">
+            <option value="" selected>Выберите коробку передач</option>
+            <option value="0">Механика</option>
+            <option value="1">Автомат</option>
+            <option value="2">Робот</option>
+        </select>
+        <input type="text" name="color" placeholder="цвет">
+        <input type="submit">
+    </form>
+    <table border="1">
+        <caption>Автомобили каталога</caption>
+        <tr>
+            <th>Производитель</th>
+            <th>Модель</th>
+            <th>Трансмиссия</th>
+            <th>Цвет</th>
+            <th>Год выпуска</th>
+        </tr>
+        {% for car in cars %}
+        <tr>
+            <td>{{ car.manufacturer }}</td>
+            <td>{{ car.model }}</td>
+            <td>{{ car.get_transmission }}</td>
+            <td>{{ car.color }}</td>
+            <td>{{ car.year }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
