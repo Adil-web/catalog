@@ -1,6 +1,3 @@
 # auto_catalog
 
-По умолчанию логин и пароль для пользователя-администратора в проекте:
-
-Логин: pws_admin
-Пароль: sf_password
+Create super user!
